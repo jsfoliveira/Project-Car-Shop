@@ -28,9 +28,6 @@ abstract class MongoModel<T> implements IModel<T> {
       { _id },
       { ...obj } as UpdateQuery<T>,
     );
-    if (!update) {
-      return null;
-    } 
     return update;
   }
 

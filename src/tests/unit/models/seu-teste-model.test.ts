@@ -29,7 +29,7 @@ describe('Testando o Car Model', () => {
 	});
 
   describe('Listando todos os carros', () => {
-		it('Criado com sucesso', async () => {
+		it('Listado com sucesso', async () => {
 			const result = await carModel.read();
 			expect(result).to.be.deep.equal([carMockWithId]);
 		});
@@ -56,7 +56,7 @@ describe('Testando o Car Model', () => {
 			expect(result).to.be.deep.equal(carMockUpdateId);
 		});
 	
-		it('_id not found to change', async () => {
+		it('_id não encontrado', async () => {
 			try {
 				await carModel.update('123ERRADO', carMockUpdate);
 			} catch (error:any) {
@@ -66,7 +66,7 @@ describe('Testando o Car Model', () => {
 	});
 
   describe('Deletando o carro pelo id', () => {
-		it('DEeletado com sucesso', async () => {
+		it('Deletado com sucesso', async () => {
 			const result = await carModel.delete('4edd40c86762e0fb12000003');
 			expect(result).to.be.deep.equal(carMockUpdateId);
 		});
